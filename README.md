@@ -27,8 +27,8 @@ Or install it yourself as:
 ```
 bin/rails encrypted:diff[store,key,target_branch]  # Diff the encrypted storage against a version in another branch (master by default)
 # defaults
-# store = config/credentials.yml.enc
-# key = config/master.ket
+# store = credentials ; relative to config/ and auto appended '.yml.enc'
+# key = master ; relative to config/ and auto appended '.key'
 # target_branch = master
 ```
 
