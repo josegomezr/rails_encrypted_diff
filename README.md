@@ -32,6 +32,8 @@ bin/rails encrypted:diff[store,key,target_branch]  # Diff the encrypted storage 
 # target_branch = master
 ```
 
+![sample run](2021-01-20_10-13.png)
+
 ## 🚨🚨 WARNING 🚨🚨
 
 🚨🚨 THIS IS INTENDED FOR CODE REVIEWS 🚨🚨
