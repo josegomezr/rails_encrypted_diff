@@ -1,8 +1,10 @@
 # RailsEncryptedDiff
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails_encrypted_diff`. To experiment with that code, run `bin/console` for an interactive prompt.
+See differences between rails encrypted credentials across branches.
 
-TODO: Delete this and the text above, and describe your gem
+## Why??
+
+I grew tired of manually decrypting the files, then running diff, then cleaning up everything and hope that I didn't miss a detail or commited it to the repo. Really the only reason 🤷
 
 ## Installation
 
@@ -22,17 +24,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+bin/rails encrypted:diff[store,key,target_branch]  # Diff the encrypted storage against a version in another branch (master by default)
+# defaults
+# store = config/credentials.yml.enc
+# key = config/master.ket
+# target_branch = master
+```
 
-## Development
+## 🚨🚨 WARNING 🚨🚨
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+🚨🚨 THIS IS INTENDED FOR CODE REVIEWS 🚨🚨
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Please for the love of god, don't run this on a CI, you'll expose secrets and it'll create a mess.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails_encrypted_diff.
+Bug reports and pull requests are welcome on GitHub at https://github.com/josegomezr/rails_encrypted_diff.
 
 ## License
 
